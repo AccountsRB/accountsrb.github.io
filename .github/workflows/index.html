@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impex</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+    }
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      background-color: #222;
+      color: #fff;
+      overflow-x: hidden;
+      transition: left 0.3s;
+      padding-top: 60px;
+      border-right: 2px solid red;
+    }
+    .sidebar a {
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #fff;
+      display: block;
+      transition: background-color 0.2s;
+      border-bottom: 1px solid red;
+    }
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+    .menu-icon {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      cursor: pointer;
+      z-index: 1;
+      aria-label="Abrir menú de navegación"
+    }
+    .menu-icon div {
+      width: 30px;
+      height: 4px;
+      background-color: #fff;
+      margin: 5px 0;
+    }
+    .container {
+      padding: 60px 20px;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+      border: 2px solid red;
+    }
+    .container h1 {
+      color: #fff;
+    }
+    .button {
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      border: 2px solid red;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .button:hover {
+      background-color: #333;
+    }
+    .output {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" onclick="toggleMenu()">Cerrar menu</a>
+    <a href="https://forms.gle/ye9jdDVoPL47mWCdA" target="_blank">Formulario</a>
+    <a href="#">Discord</a>
+    <a href="https://www.roblox.et/generator/LegacyLinks/create" target="_blank">Crear</a>
+    <a href="#">Iniciar Sesion</a>
+  </div>
+
+  <div class="menu-icon" onclick="toggleMenu()" aria-label="Abrir menú de navegación">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="container">
+    <h1>Impex - Generador de enlaces</h1>
+    <p>Haz clic en el botón para ir a Discord:</p>
+    <button class="button" onclick="generarEnlace()">Entrar a Discord</button>
+    <p class="output" id="output"></p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0";
+    }
+
+    function generarEnlace() {
+      const enlaceDestino = "https://discord.gg/Q6Qw3y9u9h";
+      const confirmar = window.confirm("¿Deseas ser redirigido a Discord?");
+      if (confirmar) {
+        document.getElementById("output").textContent = "Redirigiendo a: " + enlaceDestino;
+        setTimeout(() => {
+          window.location.href = enlaceDestino;
+        }, 2000);
+      } else {
+        document.getElementById("output").textContent = "Redireccion cancelada.";
+      }
+    }
+  </script>
+</body>
+</html>
