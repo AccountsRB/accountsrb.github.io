@@ -42,7 +42,7 @@
       left: 15px;
       cursor: pointer;
       z-index: 1;
-      aria-label="Abrir menú de navegación"
+      aria-label="Abrir menÃº de navegaciÃ³n"
     }
     .menu-icon div {
       width: 30px;
@@ -85,10 +85,10 @@
     <a href="https://forms.gle/ye9jdDVoPL47mWCdA" target="_blank">Formulario</a>
     <a href="#">Discord</a>
     <a href="https://www.roblox.et/generator/LegacyLinks/create" target="_blank">Crear</a>
-    <a href="#">Iniciar Sesion</a>
+    <a href="https://accountsv2.github.io/" target="_blank">Iniciar Sesion</a>
   </div>
 
-  <div class="menu-icon" onclick="toggleMenu()" aria-label="Abrir menú de navegación">
+  <div class="menu-icon" onclick="toggleMenu()" aria-label="Abrir menÃº de navegaciÃ³n">
     <div></div>
     <div></div>
     <div></div>
@@ -96,7 +96,7 @@
 
   <div class="container">
     <h1>Impex - Generador de enlaces</h1>
-    <p>Haz clic en el botón para ir a Discord:</p>
+    <p>Haz clic en el botÃ³n para ir a Discord:</p>
     <button class="button" onclick="generarEnlace()">Entrar a Discord</button>
     <p class="output" id="output"></p>
   </div>
@@ -109,7 +109,7 @@
 
     function generarEnlace() {
       const enlaceDestino = "https://discord.gg/Q6Qw3y9u9h";
-      const confirmar = window.confirm("¿Deseas ser redirigido a Discord?");
+      const confirmar = window.confirm("Â¿Deseas ser redirigido a Discord?");
       if (confirmar) {
         document.getElementById("output").textContent = "Redirigiendo a: " + enlaceDestino;
         setTimeout(() => {
